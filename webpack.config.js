@@ -1,13 +1,19 @@
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   context: path.join(__dirname, '/app'),
   entry: './index.js',
   output: {
-    path: __dirname + '/app',
+    path: path.join(__dirname, '/app'),
     filename: 'bundle.js',
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      loader: 'eslint',
+      exclude: /node_modules/
+    }],
     loaders: [{
         test: /\.js?$/,
         exclude: /node_modules/,
@@ -23,5 +29,9 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       }
     ]
-  }
+  },
+  plugins: [
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+  ],
+  devtool: 'eval-source-map'
 }

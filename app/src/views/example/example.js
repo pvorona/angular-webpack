@@ -1,10 +1,15 @@
-require('./example.scss');
+import './example.scss';
+import template from './example.html';
 
-function example() {
-    return {
-        restrict: 'E',
-        template: require('./example.html')
-    };
+export default {
+  restrict: 'E',
+  controller: exampleController,
+  template,
+  bindings: {
+    name: '@'
+  }
+};
+
+function exampleController() {
+  this.msg = 'Hello';
 }
-
-export default example;
