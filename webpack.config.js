@@ -13,6 +13,13 @@ module.exports = {
       test: /\.js$/,
       loader: 'eslint',
       exclude: /node_modules/
+    }, {
+      test: /\.html$/,
+      loader: 'htmlhint',
+      exclude: /node_modules/
+    }, {
+      test: /\.scss$/,
+      loader: 'stylelint'
     }],
     loaders: [{
         test: /\.js?$/,
@@ -23,7 +30,8 @@ module.exports = {
         }
       }, {
         test: /\.html?$/,
-        loader: 'html'
+        loader: 'html',
+        exclude: /node_modules/
       }, {
         test: /\.scss?$/,
         loaders: ["style", "css", "sass"]
