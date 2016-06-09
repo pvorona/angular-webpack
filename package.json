@@ -2,6 +2,7 @@
   "name": "spectrum-smg-site-web",
   "version": "1.0.0",
   "scripts": {
+    "test": "karma start",
     "start": "webpack-dev-server --hot"
   },
   "description": "Spectrum SMG",
