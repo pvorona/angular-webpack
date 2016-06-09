@@ -11,6 +11,7 @@
     "url": "https://gitlab.klika-tech.com/spectrum/spectrum-smg-site-web.git"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.6",
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
@@ -22,6 +23,12 @@
     "html-loader": "^0.4.3",
     "html-minify-loader": "^1.1.0",
     "htmlhint-loader": "^0.1.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-webpack": "^1.7.0",
     "node-sass": "^3.7.0",
     "open-browser-webpack-plugin": "0.0.2",
     "postcss-loader": "^0.9.1",
