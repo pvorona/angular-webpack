@@ -1,4 +1,5 @@
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 module.exports = {
@@ -30,16 +31,23 @@ module.exports = {
         }
       }, {
         test: /\.html?$/,
-        loader: 'html',
+        loaders: ['html', 'html-minify'],
         exclude: /node_modules/
       }, {
         test: /\.scss?$/,
-        loaders: ["style", "css", "sass"]
-      }
-    ]
+        loaders: ["style", "css", "postcss", "sass"]
+    }],
+  },
+  postcss() {
+    return [autoprefixer({ browsers: ['last 2 versions'] })];
   },
   plugins: [
     new OpenBrowserPlugin({ url: 'http://localhost:8080' })
   ],
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
+  devServer: {
+    inline: true,
+    noInfo: true,
+    contentBase: 'app'
+  }
 }
