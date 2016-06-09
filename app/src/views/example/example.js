@@ -2,13 +2,13 @@ import './example.scss';
 import template from './example.html';
 
 export default {
-  controller: exampleController,
+  controller,
   template,
   bindings: {
     name: '@'
   }
 };
 
-function exampleController() {
+function controller() {
   this.msg = 'Hello';
 }
