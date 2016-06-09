@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -35,14 +36,16 @@ module.exports = {
         exclude: /node_modules/
       }, {
         test: /\.scss?$/,
-        loaders: ["style", "css", "postcss", "sass"]
+        loaders: ['style', 'css', 'csso', 'postcss', 'sass']
     }],
   },
   postcss() {
     return [autoprefixer({ browsers: ['last 2 versions'] })];
   },
   plugins: [
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.DedupePlugin()
   ],
   devtool: 'eval-source-map',
   devServer: {
