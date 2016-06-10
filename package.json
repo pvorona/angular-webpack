@@ -2,6 +2,7 @@
   "name": "spectrum-smg-site-web",
   "version": "1.0.0",
   "scripts": {
+    "precommit": "npm test",
     "test": "karma start",
     "start": "webpack-dev-server --hot"
   },
@@ -25,6 +26,7 @@
     "html-loader": "^0.4.3",
     "html-minify-loader": "^1.1.0",
     "htmlhint-loader": "^0.1.0",
+    "husky": "^0.11.4",
     "jasmine": "^2.4.1",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
