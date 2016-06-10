@@ -2,7 +2,7 @@
   "name": "spectrum-smg-site-web",
   "version": "1.0.0",
   "scripts": {
-    "prepush": "npm test",
+    "precommit": "npm test",
     "test": "karma start",
     "start": "webpack-dev-server --hot"
   },
