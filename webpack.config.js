@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
@@ -43,7 +42,6 @@ module.exports = {
     return [autoprefixer({ browsers: ['last 2 versions'] })];
   },
   plugins: [
-    // new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.DedupePlugin()
   ],
