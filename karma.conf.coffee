@@ -22,4 +22,3 @@ module.exports = (config) ->
     ]
     webpack: webpackConfig
     webpackMiddleware: noInfo: true
-  return
