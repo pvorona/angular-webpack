@@ -36,7 +36,8 @@ module.exports = {
         exclude: /node_modules/
       }, {
         test: /\.scss?$/,
-        loader: ExtractTextPlugin.extract('style', 'css!csso!postcss!sass')
+        // loader: ExtractTextPlugin.extract('style', 'css?sourceMap!csso!postcss!sass')
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
     }],
   },
   postcss() {
@@ -44,10 +45,11 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin("bundle.css"),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.DedupePlugin()
+    // new webpack.optimize.UglifyJsPlugin(),
+    // new webpack.optimize.DedupePlugin()
   ],
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
+  // devtool: 'eval-source-map',
   devServer: {
     inline: true,
     noInfo: true,
