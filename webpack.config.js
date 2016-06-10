@@ -40,6 +40,9 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass')
     }],
   },
+  eslint: {
+    emitError: true
+  },
   postcss() {
     return [autoprefixer({ browsers: ['last 2 versions'] })];
   },

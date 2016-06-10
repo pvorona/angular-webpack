@@ -9,6 +9,8 @@ export default {
   }
 };
 
+
+
 function controller() {
   this.msg = 'Hello';
 }
