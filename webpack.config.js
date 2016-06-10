@@ -41,7 +41,7 @@ module.exports = {
     }],
   },
   eslint: {
-    emitError: true
+    // failOnError: true
   },
   postcss() {
     return [autoprefixer({ browsers: ['last 2 versions'] })];
